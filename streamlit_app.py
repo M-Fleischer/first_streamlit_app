@@ -35,9 +35,8 @@ try:
     streamlit.header("Fruityvice Fruit Advice!")
     #Normalize the JSON output of response
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-except:
-  URLError as e:
-    streamlit.error()
+except URLError as e:
+  streamlit.error()
 
 
 #Ooutput the stream as table
